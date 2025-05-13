@@ -50,7 +50,7 @@ export default function TTS({ text, voiceName = "Google español", rate = 1, pit
 
     // Dividir en frases por punto, coma, punto y coma, signos de exclamación o interrogación
     const fragments = text
-      .split(/(?<=[.?!;])\s+/)
+      .split(/(?<=[.?!;,])\s+/)
       .map((s) => s.trim())
       .filter((s) => s.length > 0);
 
