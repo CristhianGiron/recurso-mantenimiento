@@ -1,5 +1,4 @@
 import { useParams, Link } from "react-router-dom";
-import reparacionVideo from '../videos/reparacion.mp4';
 const contenidos = {
     reparacion: {
       titulo: "Reparación Básica de Computadoras",
@@ -82,7 +81,7 @@ const contenidos = {
             "🤔 ¿Sabes qué herramientas básicas necesitas para trabajar dentro de una computadora?",
         },
       ],
-      videoUrl: "../videos/reparacion.mp4",
+      videoUrl: "https://drive.google.com/file/d/1ru9QADdmuEWpRaJh9PkvWnpvUYCrlBAT/preview",
       autorVideo: "Luis Carlos Galán", // Video ejemplo de reparación básica
       enlace:
         "https://www.hp.com/es-es/shop/tech-takes/como-reparar-tu-pc",
@@ -243,7 +242,13 @@ export default function Reparacion() {
              {/* Contenedor del video + pie de imagen */}
              <div className="rounded-md overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
               <div className="aspect-video">
-              <video src={reparacionVideo} controls className="w-full h-full" />
+              <iframe
+      src={modulo.videoUrl}
+      title={`Video sobre ${modulo.titulo}`}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      className="w-full h-full"
+    />
               </div>
               {/* Pie de imagen */}
               <p className="text-xs text-gray-600 dark:text-gray-400 px-4 py-2 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">

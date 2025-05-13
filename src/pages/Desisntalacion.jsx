@@ -1,5 +1,4 @@
 import { useParams, Link } from "react-router-dom";
-import desinstalacionVideo from '../videos/desisntalacion.mp4';
 const contenidos = {
   desinstalacion: {
     titulo: "Desinstalación Segura de Programas",
@@ -64,7 +63,7 @@ const contenidos = {
           "🤔 ¿Has usado alguna vez un programa como CCleaner o Revo Uninstaller para eliminar software por completo?",
       },
     ],
-    videoUrl: "../videos/desisntalacion.mp4", // Video sobre desinstalación de programas
+    videoUrl: "https://drive.google.com/file/d/1J_XqO4b-gpb0J8YkgfW7HDd9OUn5oqLs/preview", // Video sobre desinstalación de programas
     autorVideo: "PC ANDROID",
     enlace: "https://support.microsoft.com/es-es/windows/quitar-o-eliminar-programas-en-windows",
     enlacesAdicionales: [
@@ -223,7 +222,13 @@ export default function Desisntalacion() {
              {/* Contenedor del video + pie de imagen */}
              <div className="rounded-md overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
               <div className="aspect-video">
-               <video src={desinstalacionVideo} controls className="w-full h-full" />
+              <iframe
+      src={modulo.videoUrl}
+      title={`Video sobre ${modulo.titulo}`}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      className="w-full h-full"
+    />
               </div>
               {/* Pie de imagen */}
               <p className="text-xs text-gray-600 dark:text-gray-400 px-4 py-2 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">

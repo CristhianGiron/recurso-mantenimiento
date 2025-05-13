@@ -1,5 +1,4 @@
 import { useParams, Link } from "react-router-dom";
-import respaldoVideo from '../videos/respaldo.mp4';
 const contenidos = {
   respaldo: {
     titulo: "Respaldo de Información",
@@ -73,7 +72,7 @@ const contenidos = {
           "🏆 Si logras mantener un respaldo actualizado por 1 mes, ¡felicitaciones! Estás adoptando una buena práctica digital.",
       },
     ],
-    videoUrl: "../videos/respaldo.mp4",
+    videoUrl: "https://drive.google.com/file/d/1kxsmVxdBaD5AQfOVeao5FRQPY88TAeN3/preview",
     autorVideo:"Leonardo Duarte",
     enlace:
       "https://www.digitaltrends.com/computing/how-to-back-up-your-computer/",
@@ -229,7 +228,13 @@ export default function Respaldo() {
             {/* Contenedor del video + pie de imagen */}
             <div className="rounded-md overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
               <div className="aspect-video">
-                 <video src={respaldoVideo} controls className="w-full h-full" />
+              <iframe
+      src={modulo.videoUrl}
+      title={`Video sobre ${modulo.titulo}`}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      className="w-full h-full"
+    />
               </div>
               {/* Pie de imagen */}
               <p className="text-xs text-gray-600 dark:text-gray-400 px-4 py-2 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">

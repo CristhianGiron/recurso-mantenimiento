@@ -1,6 +1,5 @@
 // src/pages/Module.jsx
 import { useParams, Link } from "react-router-dom";
-import limpiezaVideo from '../videos/limpieza.mp4';
 
 const contenidos = {
   limpieza: {
@@ -61,7 +60,7 @@ const contenidos = {
           "🧠 ¡Un ventilador lleno de polvo puede hacer que tu PC se apague por sobrecalentamiento!",
       },
     ],
-    videoUrl: "../videos/limpieza.mp4",
+    videoUrl: "https://drive.google.com/file/d/1UDtlIfpnKvI_41_ecpLoVd9DHg-LsroB/preview",
     autorVideo: "Digitalife",
     enlace:
       "https://www.hp.com/mx-es/shop/tech-takes/como-limpiar-tu-computadora-portatil",
@@ -168,7 +167,13 @@ export default function Limpieza() {
             {/* Contenedor del video + pie de imagen */}
             <div className="rounded-md overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
               <div className="aspect-video">
-              <video src={limpiezaVideo} controls className="w-full h-full" />
+              <iframe
+      src={modulo.videoUrl}
+      title={`Video sobre ${modulo.titulo}`}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      className="w-full h-full"
+    />
               </div>
               {/* Pie de imagen */}
               <p className="text-xs text-gray-600 dark:text-gray-400 px-4 py-2 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">

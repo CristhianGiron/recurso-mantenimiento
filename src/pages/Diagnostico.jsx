@@ -1,5 +1,4 @@
 import { useParams, Link } from "react-router-dom";
-import diagnosticoVideo from '../videos/diagnostico.mp4';
 const contenidos = {
     diagnostico: {
       titulo: "Diagnóstico de Problemas Comunes",
@@ -64,7 +63,7 @@ const contenidos = {
             "🧠 ¡El 80% de los problemas informáticos se pueden resolver con diagnóstico básico y mantenimiento!",
         },
       ],
-      videoUrl: "../videos/diagnostico.mp4",
+      videoUrl: "https://drive.google.com/file/d/1MlzbvPrenxAQQmSoeh9I9jkBH822kBfs/preview",
       autorVideo: "ELECTROSOTOX",
       enlace:
         "https://www.hp.com/es-es/shop/tech-takes/como-diagnosticar-problemas-pc",
@@ -221,7 +220,13 @@ export default function Diagnostico() {
             {/* Contenedor del video + pie de imagen */}
             <div className="rounded-md overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
               <div className="aspect-video">
-               <video src={diagnosticoVideo} controls className="w-full h-full" />
+              <iframe
+      src={modulo.videoUrl}
+      title={`Video sobre ${modulo.titulo}`}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      className="w-full h-full"
+    />
               </div>
               {/* Pie de imagen */}
               <p className="text-xs text-gray-600 dark:text-gray-400 px-4 py-2 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
