@@ -61,7 +61,7 @@ export default function Dashboard() {
       
       {/* Encabezado con logo */}
       <div className="relative flex justify-center items-center mb-5">
-        <Link className='absolute left-0' to={"/"}>  
+        <Link className='absolute left-0 lg:top-3 top-2' to={"/"}>  
         <img
           src="https://joinforwater.ngo/wp-content/uploads/2022/05/logo-unl-HC-01-e1651758359420.png" // Asegúrate de que el logo esté en public/logo-unl.png
           alt="Logo UNL"
@@ -69,7 +69,7 @@ export default function Dashboard() {
         />
         </Link>
        
-        <h1 className="text-2xl md:text-3xl font-extrabold text-gray-800 text-center">
+        <h1 className="text-2xl md:text-3xl lg:mt-5 mt-16 font-extrabold text-gray-800 text-center">
           Módulos Educativos
         </h1>
       </div>
