@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
@@ -18,7 +18,7 @@ import EvaluacionFinal from './pages/EvaluacionFinal';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/recurso-mantenimiento">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -38,6 +38,7 @@ export default function App() {
     </Router>
   );
 }
+
 
 
 
