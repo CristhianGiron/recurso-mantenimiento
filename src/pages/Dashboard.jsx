@@ -5,10 +5,17 @@ import {
   TrashIcon,
   ExclamationCircleIcon,
   SupportIcon,
-  CheckCircleIcon
+  CheckCircleIcon,
+  InformationCircleIcon
 } from '@heroicons/react/outline';
 
 const modulos = [
+  {
+    nombre: 'introduccion',
+    titulo: 'Introducción al recurso educativo',
+    descripcion: 'Nunca es demasiado pronto ni demasiado tarde para aprender.',
+    icono: <InformationCircleIcon className="w-8 h-8 text-blue-600" />
+  },
   {
     nombre: 'limpieza',
     titulo: 'Limpieza del computador',
@@ -103,15 +110,15 @@ export default function Dashboard() {
           <p className="mt-6 text-gray-500 text-xs italic">
             Esta plataforma educativa busca fomentar el aprendizaje técnico autónomo y práctico.
           </p>
-        </aside>
-      </div>
-
-      <Link
+          <Link
         to="/"
         className="text-blue-600 hover:underline flex items-center justify-center mt-5"
       >
         ← Volver al Inicio
       </Link>
+        </aside>
+      </div>
+
     </div>
   );
 }

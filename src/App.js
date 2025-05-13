@@ -15,6 +15,7 @@ import DiagnosticoProblemas from './pages/ActividadDiagnostico';
 import Desisntalacion from './pages/Desisntalacion';
 import EvaluacionDesinstalacion from './pages/ActividadDesinstalacion';
 import EvaluacionFinal from './pages/EvaluacionFinal';
+import IntroModulo from './pages/Introduccion';
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/modulo/evaluacion-diagnostico" element={<DiagnosticoProblemas />} />
         <Route path="/modulo/evaluacion-desinstalacion" element={<EvaluacionDesinstalacion />} />
         <Route path="/modulo/evaluacion" element={<EvaluacionFinal />} />
+        <Route path="/modulo/introduccion" element={<IntroModulo />} />
       </Routes>
     </Router>
   );
