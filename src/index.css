@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  word-break: break-word;
+  overflow-x: hidden;
+  text-wrap: pretty;
+}
