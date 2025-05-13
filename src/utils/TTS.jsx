@@ -68,6 +68,7 @@ export default function TTS({ text, voiceName = "Google español", rate = 1, pit
 
   return (
     <button
+    type="button"
       onClick={isSpeaking ? handleStop : handleSpeak}
       className={`inline-flex items-center p-1 text-blue-600 hover:text-blue-800 ${className}`}
       title={isSpeaking ? "Detener" : "Escuchar"}
