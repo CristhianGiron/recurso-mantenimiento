@@ -20,21 +20,9 @@ export default function IntroModulo() {
         </Link>
         <div className="fixed h-12 w-full top-0 left-0 bg-gray-50 z-0"></div>
       </div>
-      {showWelcome && (
-        <div className="bg-blue-100 border border-blue-300 text-blue-800 p-4 rounded-xl shadow-md mb-6 opacity-0 animate-fade-in mt-14">
-          <p className="flex items-center gap-2">
-            <span className="w-5 h-5">✨</span>
-            <span>
-              ¡Bienvenido! Estás por comenzar una experiencia interactiva donde
-              aprenderás a cuidar, diagnosticar y reparar tu computadora como un
-              profesional.
-            </span>
-          </p>
-        </div>
-      )}
 
       <h1 className="text-3xl font-bold text-center mb-6 mt-14">
-        📘 Introducción al Recurso Educativo
+        Introducción al Recurso Educativo
       </h1>
 
       <div className="mb-6 shadow-xl rounded-2xl border p-6">
@@ -57,7 +45,7 @@ export default function IntroModulo() {
 
       <div className="mb-6 shadow-xl rounded-2xl border p-6">
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold">🎯 Conexión Curricular</h2>
+          <h2 className="text-xl font-semibold">Conexión Curricular</h2>
           <p>
             Este recurso contribuye al desarrollo de la siguiente destreza del
             currículo oficial ecuatoriano para el Bachillerato Técnico en
@@ -89,15 +77,14 @@ export default function IntroModulo() {
       <div className="mb-6 shadow-xl rounded-2xl border p-6">
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">
-            🧭 ¿Qué aprenderás en este curso?
+            ¿Qué aprenderás en este curso?
           </h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-base">
-            <li>🧽 Limpieza del computador: externa e interna</li>
-            <li>💾 Respaldo seguro de tu información</li>
-            <li>🧹 Desinstalación correcta de software</li>
-            <li>🛠 Diagnóstico de fallas frecuentes</li>
-            <li>🧰 Reparación básica de componentes</li>
-            <li>📝 Evaluación final práctica</li>
+            <li>Limpieza del computador: externa e interna</li>
+            <li>Respaldo seguro de tu información</li>
+            <li>Desinstalación correcta de software</li>
+            <li>Diagnóstico de fallas frecuentes</li>
+            <li>Reparación básica de componentes</li>
           </ul>
           <p>
             Cada módulo incluye explicaciones paso a paso, recursos adicionales

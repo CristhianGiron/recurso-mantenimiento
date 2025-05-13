@@ -33,13 +33,13 @@ export default function Home() {
       <div className="relative z-10 text-center backdrop-blur-sm bg-black/40 p-6 rounded-xl">
         <img src="https://joinforwater.ngo/wp-content/uploads/2022/05/logo-unl-HC-01-e1651758359420.png" alt="" />
         <h1 className="text-4xl font-bold mb-4">Curso de Mantenimiento de Computadores</h1>
-        <p className="text-lg mb-6">Ingresa para comenzar o entra como invitado</p>
+        <p className="text-lg mb-6">Ingresa para comenzar</p>
         <div className="flex gap-4 justify-center">
-          <Link to="/login" className="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">
+          {/*<Link to="/login" className="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">
             Iniciar Sesión
-          </Link>
+          </Link>*/}
           <Link to="/dashboard" className="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700">
-            Ingresar como Invitado
+            Ingresar
           </Link>
         </div>
       </div>
