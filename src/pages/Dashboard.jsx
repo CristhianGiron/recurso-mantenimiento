@@ -9,6 +9,7 @@ import {
   InformationCircleIcon,
   ArrowRightIcon
 } from '@heroicons/react/outline';
+import TTS from '../utils/TTS';
 
 const modulos = [
   {
@@ -56,17 +57,29 @@ const modulos = [
 ];
 
 export default function Dashboard() {
+  const textoAside = `
+  Información del recurso:
+  Nombre: Soporte técnico.
+  Autor: Gabriel Chamba, Cristhian Girón, Danny Peñafiel.
+  Licencia: Creative Commons BY-SA.
+  Asignatura: Análisis y diseño de recursos educativos.
+  Subtemas: Mantenimiento de computadoras.
+  Objetivo: Aplicar técnicas de mantenimiento preventivo y correctivo en computadoras para asegurar su correcto funcionamiento y proteger la información.
+  Edad sugerida: 15 a 16 años.
+  Duración: 5 módulos más evaluación final.
+  Esta plataforma educativa busca fomentar el aprendizaje técnico autónomo y práctico.
+`;
   return (
     <div className="min-h-screen bg-gray-50 px-4 py-5">
       
       {/* Encabezado con logo */}
       <div className="relative flex justify-center items-center mb-5">
         <Link className='absolute left-0 lg:top-3 top-2' to={"/"}>  
-        <img
-          src="https://joinforwater.ngo/wp-content/uploads/2022/05/logo-unl-HC-01-e1651758359420.png" // Asegúrate de que el logo esté en public/logo-unl.png
-          alt="Logo UNL"
-          className=" h-14 object-contain"
-        />
+          <img
+            src="https://joinforwater.ngo/wp-content/uploads/2022/05/logo-unl-HC-01-e1651758359420.png"
+            alt="Logo UNL"
+            className="h-14 object-contain"
+          />
         </Link>
        
         <h1 className="text-2xl md:text-3xl lg:mt-5 mt-16 font-extrabold text-gray-800 text-center">
@@ -87,43 +100,62 @@ export default function Dashboard() {
               <h2 className="text-xl font-semibold text-blue-700 mb-1">{mod.titulo}</h2>
               <p className="text-gray-600 text-sm">{mod.descripcion}</p>
 
-              {mod.nombre !== "evaluacion" &&<div className='h-8 absolute z-10 -right-3 bottom-1/2'>
-              <ArrowRightIcon className='h-8 text-blue-600 font-bold '/>
-              </div>}  
+              {mod.nombre !== "evaluacion" && (
+                <div className='h-8 absolute z-10 -right-3 bottom-1/2'>
+                  <ArrowRightIcon className='h-8 text-blue-600 font-bold' />
+                </div>
+              )}  
             </Link>
           ))}
         </div>
 
         {/* Aside fijo */}
-        <aside className="w-full lg:w-80 bg-white border border-gray-200 p-5 rounded-xl shadow-md self-start">
+        <aside className=" relative w-full lg:w-80 bg-white border border-gray-200 p-5 rounded-xl shadow-md self-start">
           <h2 className="text-lg font-bold text-gray-800 mb-4">🧾 Información del recurso</h2>
           <ul className="space-y-2 text-sm text-gray-700">
-            <li><strong>Nombre:</strong> Soporte técnico</li>
-            <li className='pl-3'>
-              <strong className='-ml-3'>Autor:</strong> <br />
+            <li>
+              <strong>Nombre:</strong> Soporte técnico
+            </li>
+            <li className="pl-3">
+              <strong className="-ml-3">Autor:</strong>
+              <br />
               Gabriel Chamba <br />
               Cristhian Girón <br />
               Danny Peñafiel
             </li>
-            <li><strong>Licencia:</strong> Creative Commons BY-SA</li>
-            <li><strong>Asignatura:</strong> Analisis y diseño de recursos educativos</li>
-            <li><strong>Subtemas:</strong> Mantenimiento de computadoras</li>
-            <li><strong>Objetivo:</strong> Aplicar técnicas de mantenimiento preventivo y correctivo en computadoras para asegurar su correcto funcionamiento y proteger la información.</li>
-            <li><strong>Edad sugerida:</strong> 15 a 16 años</li>
-            <li><strong>Duración:</strong> 5 módulos + evaluación final</li>
+            <li>
+              <strong>Licencia:</strong> Creative Commons BY-SA
+            </li>
+            <li>
+              <strong>Asignatura:</strong> Análisis y diseño de recursos educativos
+            </li>
+            <li>
+              <strong>Subtemas:</strong> Mantenimiento de computadoras
+            </li>
+            <li>
+              <strong>Objetivo:</strong> Aplicar técnicas de mantenimiento preventivo y correctivo en computadoras para asegurar su correcto funcionamiento y proteger la información.
+            </li>
+            <li>
+              <strong>Edad sugerida:</strong> 15 a 16 años
+            </li>
+            <li>
+              <strong>Duración:</strong> 5 módulos más evaluación final
+            </li>
           </ul>
+
           <p className="mt-6 text-gray-500 text-xs italic">
             Esta plataforma educativa busca fomentar el aprendizaje técnico autónomo y práctico.
           </p>
+
           <Link
-        to="/"
-        className="text-blue-600 hover:underline flex items-center justify-center mt-5"
-      >
-        ← Volver al Inicio
-      </Link>
+            to="/"
+            className="text-blue-600 hover:underline flex items-center justify-center mt-5"
+          >
+            ← Volver al Inicio
+          </Link>
+          <TTS className="absolute right-2 top-2" text={textoAside} />
         </aside>
       </div>
-
     </div>
   );
 }

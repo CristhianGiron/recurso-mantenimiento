@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import TTS from "../utils/TTS";
 
 // Preguntas interactivas del examen final
 const preguntasFinales = [
@@ -102,12 +103,14 @@ export default function EvaluacionFinal() {
         >
           &larr; Volver
         </Link>
-        <div className="fixed -top-6 left-0 h-12 flex items-center bg-gray-50 w-full z-0"></div>
-
+  
+        <div className="fixed -top-6 left-0 h-12 flex items-center bg-gray-50 w-full z-0" />
+  
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
           Evaluación Final: Módulo de Mantenimiento de Computadoras
         </h1>
-
+        <TTS text="Evaluación Final: Módulo de Mantenimiento de Computadoras" />
+  
         <form
           className="space-y-6"
           onSubmit={(e) => {
@@ -120,7 +123,8 @@ export default function EvaluacionFinal() {
               <p className="font-semibold text-gray-800 dark:text-gray-200">
                 {idx + 1}. {preg.pregunta}
               </p>
-
+              <TTS text={`${idx + 1}. ${preg.pregunta}`} />
+  
               {/* Opción múltiple */}
               {preg.tipo === "opcionMultiple" && (
                 <ul className="space-y-1">
@@ -128,7 +132,7 @@ export default function EvaluacionFinal() {
                     const seleccionada = respuestas[idx] === i;
                     const correcta = enviado && i === preg.respuestaCorrecta;
                     const incorrecta = enviado && seleccionada && !correcta;
-
+  
                     return (
                       <li key={i}>
                         <label
@@ -156,13 +160,14 @@ export default function EvaluacionFinal() {
                             disabled={enviado}
                           />
                           {opcion}
+                          <TTS text={opcion} />
                         </label>
                       </li>
                     );
                   })}
                 </ul>
               )}
-
+  
               {/* Verdadero o Falso */}
               {preg.tipo === "verdaderoFalso" && (
                 <ul className="space-y-1">
@@ -170,7 +175,7 @@ export default function EvaluacionFinal() {
                     const seleccionada = respuestas[idx] === i;
                     const correcta = enviado && i === preg.respuestaCorrecta;
                     const incorrecta = enviado && seleccionada && !correcta;
-
+  
                     return (
                       <li key={i}>
                         <label
@@ -198,13 +203,14 @@ export default function EvaluacionFinal() {
                             disabled={enviado}
                           />
                           {opcion}
+                          <TTS text={opcion} />
                         </label>
                       </li>
                     );
                   })}
                 </ul>
               )}
-
+  
               {/* Secuencia */}
               {preg.tipo === "secuencia" && (
                 <div>
@@ -213,9 +219,9 @@ export default function EvaluacionFinal() {
                       <li
                         key={i}
                         draggable
-                        onDragStart={(e) => {
-                          e.dataTransfer.setData("text/plain", i);
-                        }}
+                        onDragStart={(e) =>
+                          e.dataTransfer.setData("text/plain", i)
+                        }
                         onDrop={(e) => {
                           const dragIndex =
                             e.dataTransfer.getData("text/plain");
@@ -228,6 +234,7 @@ export default function EvaluacionFinal() {
                         className="p-2 bg-white dark:bg-gray-800 rounded-md cursor-pointer"
                       >
                         {opcion}
+                        <TTS text={opcion} />
                       </li>
                     ))}
                   </ul>
@@ -235,7 +242,7 @@ export default function EvaluacionFinal() {
               )}
             </div>
           ))}
-
+  
           {!enviado ? (
             <button
               type="submit"
@@ -244,15 +251,19 @@ export default function EvaluacionFinal() {
               Enviar respuestas
             </button>
           ) : (
-            <div className="p-4 rounded-md bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600">
+            <div className="p-4 rounded-md bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 space-y-2">
               <p className="text-gray-900 dark:text-white">
                 Tu puntaje:{" "}
                 <strong>
                   {puntaje} / {preguntasFinales.length}
                 </strong>
               </p>
+              <TTS
+                text={`Tu puntaje: ${puntaje} de ${preguntasFinales.length}`}
+              />
+  
               <p
-                className={`mt-2 font-semibold ${
+                className={`font-semibold ${
                   aprobado ? "text-green-600" : "text-red-600"
                 }`}
               >
@@ -260,6 +271,14 @@ export default function EvaluacionFinal() {
                   ? "¡Felicidades! Has completado la evaluación con éxito."
                   : "Necesitas mejorar algunos puntos, inténtalo nuevamente."}
               </p>
+              <TTS
+                text={
+                  aprobado
+                    ? "¡Felicidades! Has completado la evaluación con éxito."
+                    : "Necesitas mejorar algunos puntos, inténtalo nuevamente."
+                }
+              />
+  
               <button
                 type="button"
                 className="mt-4 text-blue-600 underline"
@@ -279,5 +298,4 @@ export default function EvaluacionFinal() {
         </form>
       </div>
     </main>
-  );
-}
+  );}

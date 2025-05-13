@@ -16,27 +16,11 @@ import Desisntalacion from './pages/Desisntalacion';
 import EvaluacionDesinstalacion from './pages/ActividadDesinstalacion';
 import EvaluacionFinal from './pages/EvaluacionFinal';
 import IntroModulo from './pages/Introduccion';
+import TextToSpeech from 'react-text-to-speech';
+import TTS from './utils/TTS';
 
 export default function App() {
-  const speakAllText = () => {
-    // Extrae todo el texto visible del body
-    const text = document.body.innerText;
 
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'es-ES'; // Voz en español
-    utterance.rate = 1;
-    utterance.pitch = 1;
-
-    // Puedes elegir una voz específica si quieres
-    const voices = window.speechSynthesis.getVoices();
-    const spanishVoice = voices.find(voice => voice.lang.includes('es'));
-
-    if (spanishVoice) {
-      utterance.voice = spanishVoice;
-    }
-
-    window.speechSynthesis.speak(utterance);
-  };
   return (
     <> <Router basename="/recurso-mantenimiento">
       <Routes>
@@ -57,15 +41,6 @@ export default function App() {
         <Route path="/modulo/introduccion" element={<IntroModulo />} />
       </Routes>
     </Router>
-    <div className="p-8 absolute z-50 botom-2 right-2 text-xs">
-
-      <button
-        onClick={speakAllText}
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-300"
-      >
-        Lectura
-      </button>
-    </div>
     </>
    
     

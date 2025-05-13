@@ -1,5 +1,5 @@
-// src/pages/Module.jsx
 import { useParams, Link } from "react-router-dom";
+import TTS from "../utils/TTS"; // Asegúrate de que este TTS está importado correctamente
 
 const contenidos = {
   limpieza: {
@@ -7,7 +7,7 @@ const contenidos = {
     contenido: [
       {
         tipo: "texto",
-        texto: `🔧 La limpieza de tu computadora es esencial para su buen funcionamiento y duración. Aquí te enseñamos a hacerlo paso a paso:`,
+        texto: `La limpieza de tu computadora es esencial para su buen funcionamiento y duración. Aquí te enseñamos a hacerlo paso a paso:`,
       },
       {
         tipo: "pasos",
@@ -96,6 +96,7 @@ export default function Limpieza() {
                   return (
                     <p key={idx} className="text-gray-700 dark:text-gray-300">
                       {bloque.texto}
+                      <TTS text={bloque.texto} />
                     </p>
                   );
 
@@ -103,7 +104,7 @@ export default function Limpieza() {
                   return (
                     <div
                       key={idx}
-                      className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md p-3 shadow-sm"
+                      className=" relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md p-3 shadow-sm"
                     >
                       <h3 className="text-sm font-semibold text-blue-700 dark:text-blue-400 mb-1">
                         {bloque.titulo}
@@ -113,6 +114,8 @@ export default function Limpieza() {
                           <li key={i}>{item}</li>
                         ))}
                       </ul>
+                      {/* Agregar el botón de TTS en cada bloque */}
+                      <TTS className="absolute right-2 top-2" text={`${bloque.titulo} ${bloque.items.join(' ')}`} />
                     </div>
                   );
 
@@ -123,6 +126,7 @@ export default function Limpieza() {
                       className="bg-yellow-100 dark:bg-yellow-200 text-yellow-900 p-3 rounded-md text-sm border-l-4 border-yellow-500"
                     >
                       {bloque.texto}
+                      <TTS text={bloque.texto} />
                     </div>
                   );
 
@@ -133,6 +137,7 @@ export default function Limpieza() {
                       className="bg-blue-50 dark:bg-blue-900 text-blue-800 dark:text-blue-200 p-3 rounded-md border-l-4 border-blue-500 italic"
                     >
                       {bloque.texto}
+                      <TTS text={bloque.texto} />
                     </div>
                   );
 
@@ -143,6 +148,7 @@ export default function Limpieza() {
                       className="bg-indigo-50 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 p-3 rounded-md"
                     >
                       {bloque.texto}
+                      <TTS text={bloque.texto} />
                     </div>
                   );
 
@@ -150,6 +156,8 @@ export default function Limpieza() {
                   return null;
               }
             })}
+
+            {/* Resto de contenido */}
             <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-md">
               <h2 className="text-sm font-semibold mb-1 text-gray-800 dark:text-gray-100">
                 📘 Actividad
@@ -161,7 +169,6 @@ export default function Limpieza() {
                 Realizar actividad →
               </Link>
             </div>
-
             <div
               className="interacty_padding"
               style={{
@@ -195,7 +202,6 @@ export default function Limpieza() {
 
           <aside className="space-y-4">
             {/* Video */}
-            {/* Contenedor del video + pie de imagen */}
             <div className="rounded-md overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
               <div className="aspect-video">
                 <iframe
@@ -206,7 +212,6 @@ export default function Limpieza() {
                   className="w-full h-full"
                 />
               </div>
-              {/* Pie de imagen */}
               <p className="text-xs text-gray-600 dark:text-gray-400 px-4 py-2 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
                 Video del canal de YouTube:{" "}
                 <a
@@ -220,22 +225,7 @@ export default function Limpieza() {
               </p>
             </div>
 
-            {/* Recurso adicional */}
-            {/*<div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-md">
-              <h2 className="text-sm font-semibold mb-1 text-gray-800 dark:text-gray-100">
-                📘 Recurso adicional
-              </h2>
-              <a
-                href={modulo.enlace}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 dark:text-blue-400 hover:underline text-sm"
-              >
-                Leer más →
-              </a>
-            </div>*/}
-
-            {/* Imágenes adicionales */}
+            {/* Recursos adicionales */}
             <div className="space-y-3">
               <div className="border rounded-md overflow-hidden shadow-sm">
                 <img
@@ -245,17 +235,6 @@ export default function Limpieza() {
                 />
                 <p className="text-xs text-gray-600 dark:text-gray-400 px-2 py-1 bg-gray-50 dark:bg-gray-800">
                   Limpieza externa: usa un paño de microfibra sin mojar.
-                </p>
-              </div>
-
-              <div className="border rounded-md overflow-hidden shadow-sm">
-                <img
-                  src="https://www.avg.com/hs-fs/hubfs/Blog_Content/Avg/Signal/AVG%20Signal%20Images/How%20to%20Physically%20Clean%20Your%20Computer/image2.jpg?width=660&name=image2.jpg"
-                  alt="Usando aire comprimido en una PC"
-                  className="w-full object-cover"
-                />
-                <p className="text-xs text-gray-600 dark:text-gray-400 px-2 py-1 bg-gray-50 dark:bg-gray-800">
-                  Aire comprimido elimina el polvo sin dañar los componentes.
                 </p>
               </div>
             </div>
