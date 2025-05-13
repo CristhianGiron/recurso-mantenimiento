@@ -236,34 +236,34 @@ export default function Reparacion() {
               </Link>
             </div>
             <div
-  className="interacty_padding"
-  style={{
-    position: 'relative',
-    paddingTop: '99.5%',
-    paddingRight: '0',
-    paddingBottom: '0',
-    paddingLeft: '0'
-  }}
->
-  <div
-    className="interacty_wrapper"
-    style={{
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      display: 'flex',
-      justifyContent: 'center'
-    }}
-  >
-    <iframe
-      style={{ border: 'none', width: '100%', height: '100%' }}
-      src="https://p.interacty.me/9a61ebea9d753546/iframe.html"
-      title="Interacty Game"
-    />
-  </div>
-</div>
+              className="interacty_padding"
+              style={{
+                position: "relative",
+                paddingTop: "99.5%",
+                paddingRight: "0",
+                paddingBottom: "0",
+                paddingLeft: "0",
+              }}
+            >
+              <div
+                className="interacty_wrapper"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <iframe
+                  style={{ border: "none", width: "100%", height: "100%" }}
+                  src="https://p.interacty.me/9a61ebea9d753546/iframe.html"
+                  title="Interacty Game"
+                />
+              </div>
+            </div>
           </section>
 
           <aside className="space-y-4">

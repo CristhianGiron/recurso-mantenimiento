@@ -60,7 +60,8 @@ const contenidos = {
           "🧠 ¡Un ventilador lleno de polvo puede hacer que tu PC se apague por sobrecalentamiento!",
       },
     ],
-    videoUrl: "https://drive.google.com/file/d/1UDtlIfpnKvI_41_ecpLoVd9DHg-LsroB/preview",
+    videoUrl:
+      "https://drive.google.com/file/d/1UDtlIfpnKvI_41_ecpLoVd9DHg-LsroB/preview",
     autorVideo: "Digitalife",
     enlace:
       "https://www.hp.com/mx-es/shop/tech-takes/como-limpiar-tu-computadora-portatil",
@@ -160,6 +161,36 @@ export default function Limpieza() {
                 Realizar actividad →
               </Link>
             </div>
+
+            <div
+              className="interacty_padding"
+              style={{
+                position: "relative",
+                paddingTop: "99.5%",
+                paddingRight: "0",
+                paddingBottom: "0",
+                paddingLeft: "0",
+              }}
+            >
+              <div
+                className="interacty_wrapper"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <iframe
+                  style={{ border: "none", width: "100%", height: "100%" }}
+                  src="https://p.interacty.me/81ffa4b26fda5e4a/iframe.html"
+                  title="Interacty Game"
+                />
+              </div>
+            </div>
           </section>
 
           <aside className="space-y-4">
@@ -167,13 +198,13 @@ export default function Limpieza() {
             {/* Contenedor del video + pie de imagen */}
             <div className="rounded-md overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
               <div className="aspect-video">
-              <iframe
-      src={modulo.videoUrl}
-      title={`Video sobre ${modulo.titulo}`}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      className="w-full h-full"
-    />
+                <iframe
+                  src={modulo.videoUrl}
+                  title={`Video sobre ${modulo.titulo}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
               </div>
               {/* Pie de imagen */}
               <p className="text-xs text-gray-600 dark:text-gray-400 px-4 py-2 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
