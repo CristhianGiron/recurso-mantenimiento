@@ -18,7 +18,7 @@ import EvaluacionFinal from './pages/EvaluacionFinal';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/recurso-mantenimiento">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -34,7 +34,6 @@ export default function App() {
         <Route path="/modulo/evaluacion-diagnostico" element={<DiagnosticoProblemas />} />
         <Route path="/modulo/evaluacion-desinstalacion" element={<EvaluacionDesinstalacion />} />
         <Route path="/modulo/evaluacion" element={<EvaluacionFinal />} />
-
       </Routes>
     </Router>
   );
