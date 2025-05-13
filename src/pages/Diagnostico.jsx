@@ -215,6 +215,7 @@ export default function Diagnostico() {
                 Realizar actividad →
               </Link>
             </div>
+
           </section>
 
           <aside className="space-y-4">
@@ -282,7 +283,6 @@ export default function Diagnostico() {
                 </figcaption>
               </figure>
             ))}
-            <PCComponentGame />
           </aside>
         </div>
       </div>

@@ -1,121 +1,120 @@
 import { useParams, Link } from "react-router-dom";
 const contenidos = {
-    reparacion: {
-      titulo: "Reparación Básica de Computadoras",
-      contenido: [
-        {
-          tipo: "texto",
-          texto:
-            "🧰 La reparación de computadoras es una actividad técnica que requiere diagnóstico, conocimiento del hardware y software, y buenas prácticas de seguridad.",
-        },
-        {
-          tipo: "texto",
-          texto:
-            "🔧 En este módulo aprenderás conceptos esenciales para realizar intervenciones básicas, identificar problemas comunes y aplicar soluciones prácticas.",
-        },
-        {
-          tipo: "ventajas",
-          titulo: "🎯 ¿Qué aprenderás?",
-          items: [
-            "Cómo identificar y solucionar problemas comunes.",
-            "Cómo reemplazar componentes dañados.",
-            "Cómo aplicar mantenimiento preventivo.",
-            "Diferencias entre fallas físicas y lógicas.",
-          ],
-        },
-        {
-          tipo: "pasos",
-          titulo: "🖥️ Conoce los componentes internos",
-          items: [
-            "Placa madre (Motherboard)",
-            "Memoria RAM",
-            "Disco duro / SSD",
-            "Fuente de poder",
-            "CPU y ventilador",
-          ],
-        },
-        {
-          tipo: "texto",
-          texto:
-            "🧠 Cada componente cumple una función clave. Si uno falla, puede afectar todo el sistema. Por eso es vital conocerlos antes de intervenir.",
-        },
-        {
-          tipo: "tip",
-          texto:
-            "💡 Consulta el manual de tu equipo o busca el modelo exacto en línea para conocer sus partes específicas.",
-        },
-        {
-          tipo: "pasos",
-          titulo: "🛠️ Pasos generales para reparar una PC",
-          items: [
-            "Apagar y desconectar el equipo completamente.",
-            "Usar herramientas adecuadas (destornilladores, pulsera antiestática).",
-            "Identificar el componente sospechoso mediante diagnóstico.",
-            "Extraer y reemplazar con cuidado el componente.",
-            "Volver a montar y probar el funcionamiento.",
-          ],
-        },
-        {
-          tipo: "alerta",
-          texto:
-            "⚠️ Nunca toques los circuitos directamente con los dedos. La estática puede dañar los componentes internos.",
-        },
-        {
-          tipo: "curiosidad",
-          texto:
-            "📊 El 70% de los problemas de hardware en PCs se deben a polvo, mala ventilación o cables sueltos.",
-        },
-        {
-          tipo: "frecuencia",
-          texto:
-            "🧼 Limpia el interior del equipo cada 3-6 meses. Un mantenimiento preventivo evita fallos futuros.",
-        },
-        {
-          tipo: "logro",
-          texto:
-            "🏆 Si puedes reemplazar la memoria RAM o un disco duro por ti mismo, ya tienes habilidades de técnico básico.",
-        },
-        {
-          tipo: "pregunta",
-          texto:
-            "🤔 ¿Sabes qué herramientas básicas necesitas para trabajar dentro de una computadora?",
-        },
-      ],
-      videoUrl: "https://drive.google.com/file/d/1ru9QADdmuEWpRaJh9PkvWnpvUYCrlBAT/preview",
-      autorVideo: "Luis Carlos Galán", // Video ejemplo de reparación básica
-      enlace:
-        "https://www.hp.com/es-es/shop/tech-takes/como-reparar-tu-pc",
-      enlacesAdicionales: [
-        {
-          titulo: "Guía paso a paso para cambiar componentes",
-          url: "https://www.crucial.es/support/pc-build-upgrade-guide",
-        },
-        {
-          titulo: "Reparación de laptops en iFixit",
-          url: "https://www.ifixit.com/Device/PC_Laptop",
-        },
-        {
-          titulo: "Diferencias entre problemas de software y hardware",
-          url: "https://www.avast.com/es-es/c-how-to-fix-pc-problems",
-        },
-      ],
-      imagenes: [
-        {
-          src: "https://i.ytimg.com/vi/-1clqsilLQ0/maxresdefault.jpg",
-          alt: "Componentes internos de una computadora",
-          descripcion:
-            "Vista general de los principales componentes internos que puedes identificar y reparar.",
-        },
-        {
-          src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX83qX6N34beYGr-jNJuhtdY87C3rd6Z8ReA&s",
-          alt: "Técnico cambiando la RAM",
-          descripcion:
-            "Uno de los reemplazos más comunes y sencillos: la memoria RAM.",
-        },
-      ],
-    },
-  };
-  
+  reparacion: {
+    titulo: "Reparación Básica de Computadoras",
+    contenido: [
+      {
+        tipo: "texto",
+        texto:
+          "🧰 La reparación de computadoras es una actividad técnica que requiere diagnóstico, conocimiento del hardware y software, y buenas prácticas de seguridad.",
+      },
+      {
+        tipo: "texto",
+        texto:
+          "🔧 En este módulo aprenderás conceptos esenciales para realizar intervenciones básicas, identificar problemas comunes y aplicar soluciones prácticas.",
+      },
+      {
+        tipo: "ventajas",
+        titulo: "🎯 ¿Qué aprenderás?",
+        items: [
+          "Cómo identificar y solucionar problemas comunes.",
+          "Cómo reemplazar componentes dañados.",
+          "Cómo aplicar mantenimiento preventivo.",
+          "Diferencias entre fallas físicas y lógicas.",
+        ],
+      },
+      {
+        tipo: "pasos",
+        titulo: "🖥️ Conoce los componentes internos",
+        items: [
+          "Placa madre (Motherboard)",
+          "Memoria RAM",
+          "Disco duro / SSD",
+          "Fuente de poder",
+          "CPU y ventilador",
+        ],
+      },
+      {
+        tipo: "texto",
+        texto:
+          "🧠 Cada componente cumple una función clave. Si uno falla, puede afectar todo el sistema. Por eso es vital conocerlos antes de intervenir.",
+      },
+      {
+        tipo: "tip",
+        texto:
+          "💡 Consulta el manual de tu equipo o busca el modelo exacto en línea para conocer sus partes específicas.",
+      },
+      {
+        tipo: "pasos",
+        titulo: "🛠️ Pasos generales para reparar una PC",
+        items: [
+          "Apagar y desconectar el equipo completamente.",
+          "Usar herramientas adecuadas (destornilladores, pulsera antiestática).",
+          "Identificar el componente sospechoso mediante diagnóstico.",
+          "Extraer y reemplazar con cuidado el componente.",
+          "Volver a montar y probar el funcionamiento.",
+        ],
+      },
+      {
+        tipo: "alerta",
+        texto:
+          "⚠️ Nunca toques los circuitos directamente con los dedos. La estática puede dañar los componentes internos.",
+      },
+      {
+        tipo: "curiosidad",
+        texto:
+          "📊 El 70% de los problemas de hardware en PCs se deben a polvo, mala ventilación o cables sueltos.",
+      },
+      {
+        tipo: "frecuencia",
+        texto:
+          "🧼 Limpia el interior del equipo cada 3-6 meses. Un mantenimiento preventivo evita fallos futuros.",
+      },
+      {
+        tipo: "logro",
+        texto:
+          "🏆 Si puedes reemplazar la memoria RAM o un disco duro por ti mismo, ya tienes habilidades de técnico básico.",
+      },
+      {
+        tipo: "pregunta",
+        texto:
+          "🤔 ¿Sabes qué herramientas básicas necesitas para trabajar dentro de una computadora?",
+      },
+    ],
+    videoUrl:
+      "https://drive.google.com/file/d/1ru9QADdmuEWpRaJh9PkvWnpvUYCrlBAT/preview",
+    autorVideo: "Luis Carlos Galán", // Video ejemplo de reparación básica
+    enlace: "https://www.hp.com/es-es/shop/tech-takes/como-reparar-tu-pc",
+    enlacesAdicionales: [
+      {
+        titulo: "Guía paso a paso para cambiar componentes",
+        url: "https://www.crucial.es/support/pc-build-upgrade-guide",
+      },
+      {
+        titulo: "Reparación de laptops en iFixit",
+        url: "https://www.ifixit.com/Device/PC_Laptop",
+      },
+      {
+        titulo: "Diferencias entre problemas de software y hardware",
+        url: "https://www.avast.com/es-es/c-how-to-fix-pc-problems",
+      },
+    ],
+    imagenes: [
+      {
+        src: "https://i.ytimg.com/vi/-1clqsilLQ0/maxresdefault.jpg",
+        alt: "Componentes internos de una computadora",
+        descripcion:
+          "Vista general de los principales componentes internos que puedes identificar y reparar.",
+      },
+      {
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX83qX6N34beYGr-jNJuhtdY87C3rd6Z8ReA&s",
+        alt: "Técnico cambiando la RAM",
+        descripcion:
+          "Uno de los reemplazos más comunes y sencillos: la memoria RAM.",
+      },
+    ],
+  },
+};
 
 export default function Reparacion() {
   const modulo = contenidos["reparacion"];
@@ -236,19 +235,48 @@ export default function Reparacion() {
                 Realizar actividad →
               </Link>
             </div>
+            <div
+  className="interacty_padding"
+  style={{
+    position: 'relative',
+    paddingTop: '99.5%',
+    paddingRight: '0',
+    paddingBottom: '0',
+    paddingLeft: '0'
+  }}
+>
+  <div
+    className="interacty_wrapper"
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      justifyContent: 'center'
+    }}
+  >
+    <iframe
+      style={{ border: 'none', width: '100%', height: '100%' }}
+      src="https://p.interacty.me/9a61ebea9d753546/iframe.html"
+      title="Interacty Game"
+    />
+  </div>
+</div>
           </section>
 
           <aside className="space-y-4">
-             {/* Contenedor del video + pie de imagen */}
-             <div className="rounded-md overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+            {/* Contenedor del video + pie de imagen */}
+            <div className="rounded-md overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
               <div className="aspect-video">
-              <iframe
-      src={modulo.videoUrl}
-      title={`Video sobre ${modulo.titulo}`}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      className="w-full h-full"
-    />
+                <iframe
+                  src={modulo.videoUrl}
+                  title={`Video sobre ${modulo.titulo}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
               </div>
               {/* Pie de imagen */}
               <p className="text-xs text-gray-600 dark:text-gray-400 px-4 py-2 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
@@ -259,8 +287,7 @@ export default function Reparacion() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  
-                    Luis Carlos Galán
+                  Luis Carlos Galán
                 </a>
               </p>
             </div>
