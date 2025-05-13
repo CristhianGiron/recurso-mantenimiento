@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const imagenes = [
   "https://www.unl.edu.ec/sites/default/files/galeria/2021/02/HEADER1.jpg",
@@ -34,12 +35,12 @@ export default function Home() {
         <h1 className="text-4xl font-bold mb-4">Curso de Mantenimiento de Computadores</h1>
         <p className="text-lg mb-6">Ingresa para comenzar o entra como invitado</p>
         <div className="flex gap-4 justify-center">
-          <a href="/login" className="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">
+          <Link to="/login" className="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">
             Iniciar Sesión
-          </a>
-          <a href="/dashboard" className="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700">
+          </Link>
+          <Link to="/dashboard" className="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700">
             Ingresar como Invitado
-          </a>
+          </Link>
         </div>
       </div>
     </main>
