@@ -38,7 +38,7 @@ export default function Home() {
           <Link to="/login" className="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">
             Iniciar Sesión
           </Link>
-          <Link href="/dashboard" className="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700">
+          <Link to="/dashboard" className="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700">
             Ingresar como Invitado
           </Link>
         </div>

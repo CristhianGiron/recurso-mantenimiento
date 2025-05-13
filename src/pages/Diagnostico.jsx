@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import PCComponentGame from "./juegoresponsive";
 const contenidos = {
     diagnostico: {
       titulo: "Diagnóstico de Problemas Comunes",
@@ -281,6 +282,7 @@ export default function Diagnostico() {
                 </figcaption>
               </figure>
             ))}
+            <PCComponentGame />
           </aside>
         </div>
       </div>
