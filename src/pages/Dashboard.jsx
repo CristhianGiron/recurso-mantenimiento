@@ -6,7 +6,8 @@ import {
   ExclamationCircleIcon,
   SupportIcon,
   CheckCircleIcon,
-  InformationCircleIcon
+  InformationCircleIcon,
+  ArrowRightIcon
 } from '@heroicons/react/outline';
 
 const modulos = [
@@ -80,11 +81,15 @@ export default function Dashboard() {
             <Link
               to={`/modulo/${mod.nombre}`}
               key={mod.nombre}
-              className="bg-white p-5 rounded-xl shadow hover:shadow-lg transition border hover:border-blue-500 block"
+              className="relative bg-white p-5 rounded-xl shadow hover:shadow-lg transition border hover:border-blue-500 block"
             >
               <div className="mb-3">{mod.icono}</div>
               <h2 className="text-xl font-semibold text-blue-700 mb-1">{mod.titulo}</h2>
               <p className="text-gray-600 text-sm">{mod.descripcion}</p>
+
+              {mod.nombre !== "evaluacion" &&<div className='h-8 absolute z-10 -right-3 bottom-1/2'>
+              <ArrowRightIcon className='h-8 text-blue-600 font-bold '/>
+              </div>}  
             </Link>
           ))}
         </div>

@@ -244,7 +244,7 @@ export default function Desisntalacion() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-md space-y-2">
+            {/*<div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-md space-y-2">
               <h2 className="text-sm font-semibold text-gray-800 dark:text-gray-100">
                 📘 Recursos adicionales
               </h2>
@@ -267,7 +267,7 @@ export default function Desisntalacion() {
                   {enlace.titulo}
                 </a>
               ))}
-            </div>
+            </div>*/}
             {modulo.imagenes?.map((imagen, i) => (
               <figure
                 key={i}

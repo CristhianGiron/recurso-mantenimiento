@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 
 const contenidos = {
   limpieza: {
-    titulo: "Limpieza del PC",
+    titulo: "Limpieza del Computadoras",
     contenido: [
       {
         tipo: "texto",
@@ -221,7 +221,7 @@ export default function Limpieza() {
             </div>
 
             {/* Recurso adicional */}
-            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-md">
+            {/*<div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-md">
               <h2 className="text-sm font-semibold mb-1 text-gray-800 dark:text-gray-100">
                 📘 Recurso adicional
               </h2>
@@ -233,7 +233,7 @@ export default function Limpieza() {
               >
                 Leer más →
               </a>
-            </div>
+            </div>*/}
 
             {/* Imágenes adicionales */}
             <div className="space-y-3">
