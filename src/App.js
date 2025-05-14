@@ -18,6 +18,7 @@ import EvaluacionFinal from './pages/EvaluacionFinal';
 import IntroModulo from './pages/Introduccion';
 import TextToSpeech from 'react-text-to-speech';
 import TTS from './utils/TTS';
+import ReferenciasBibliograficas from './pages/Referencias';
 
 export default function App() {
 
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="/modulo/evaluacion-desinstalacion" element={<EvaluacionDesinstalacion />} />
         <Route path="/modulo/evaluacion" element={<EvaluacionFinal />} />
         <Route path="/modulo/introduccion" element={<IntroModulo />} />
+        <Route path="/modulo/referencias" element={<ReferenciasBibliograficas />} />
       </Routes>
     </Router>
     </>

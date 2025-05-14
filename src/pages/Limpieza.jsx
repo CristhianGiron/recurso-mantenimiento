@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import TTS from "../utils/TTS"; // Asegúrate de que este TTS está importado correctamente
+import MatchingGame from "./GameParejas";
 
 const contenidos = {
   limpieza: {
@@ -77,11 +78,11 @@ export default function Limpieza() {
         <div className="flex justify-between items-center">
           <Link
             to="/dashboard"
-            className="text-blue-600 dark:text-blue-400 hover:underline text-xs fixed top-5 z-10"
+            className="text-blue-600 dark:text-blue-400 hover:underline text-xs fixed top-5 z-50"
           >
             &larr; Volver
           </Link>
-          <div className="fixed h-12 w-full top-0 left-0 bg-gray-50 z-0"></div>
+          <div className="fixed h-12 w-full top-0 left-0 bg-gray-50 z-10"></div>
         </div>
 
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -169,35 +170,7 @@ export default function Limpieza() {
                 Realizar actividad →
               </Link>
             </div>
-            <div
-              className="interacty_padding"
-              style={{
-                position: "relative",
-                paddingTop: "99.5%",
-                paddingRight: "0",
-                paddingBottom: "0",
-                paddingLeft: "0",
-              }}
-            >
-              <div
-                className="interacty_wrapper"
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <iframe
-                  style={{ border: "none", width: "100%", height: "100%" }}
-                  src="https://p.interacty.me/81ffa4b26fda5e4a/iframe.html"
-                  title="Interacty Game"
-                />
-              </div>
-            </div>
+            <MatchingGame />
           </section>
 
           <aside className="space-y-4">

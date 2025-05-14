@@ -114,11 +114,11 @@ export default function Respaldo() {
         <div className="flex justify-between items-center">
           <Link
             to="/dashboard"
-            className="text-blue-600 dark:text-blue-400 hover:underline text-xs fixed top-5 z-10"
+            className="text-blue-600 dark:text-blue-400 hover:underline text-xs fixed top-5 z-50"
           >
             &larr; Volver
           </Link>
-          <div className="fixed h-12 w-full top-0 left-0 bg-gray-50 z-0"></div>
+          <div className="fixed h-12 w-full top-0 left-0 bg-gray-50 z-10"></div>
         </div>
 
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">

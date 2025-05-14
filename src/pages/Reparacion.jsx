@@ -1,5 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import TTS from "../utils/TTS";
+import ImageWithHotspots from "./ImageWithHotSposts";
+import pc from "../images/pc.png";
 const contenidos = {
   reparacion: {
     titulo: "Reparación Básica de Computadoras",
@@ -116,6 +118,21 @@ const contenidos = {
     ],
   },
 };
+const hotspots = [
+  { x: 33, y: 26, text: "Este es el procesador (CPU)." },
+  { x: 45, y: 25, text: "Aquí se encuentra la memoria RAM." },
+  { x: 20, y: 80, text: "Este componente es la fuente de poder." },
+  { x: 30, y: 52, text: "Este componente es la Tarjeta gráfica." },
+  {
+    x: 40,
+    y: 10,
+    text: "Radiador parte del sistema de refrigeración del procesador.",
+  },
+  { x: 95, y: 50, text: "Este es el gabinete o case del computador." },
+  { x: 7, y: 25, text: "Ventilador de el case." },
+  { x: 28, y: 38, text: "M.2 Equivalente a un disco duro mecánico o SSD." },
+  { x: 50, y: 62, text: "Cableado" },
+];
 
 export default function Reparacion() {
   const modulo = contenidos["reparacion"];
@@ -126,11 +143,11 @@ export default function Reparacion() {
         <div className="flex justify-between items-center">
           <Link
             to="/dashboard"
-            className="text-blue-600 dark:text-blue-400 hover:underline text-xs fixed top-5 z-10"
+            className="text-blue-600 dark:text-blue-400 hover:underline text-xs fixed top-5 z-50"
           >
             &larr; Volver
           </Link>
-          <div className="fixed h-12 w-full top-0 left-0 bg-gray-50 z-0"></div>
+          <div className="fixed h-12 w-full top-0 left-0 bg-gray-50 z-10"></div>
         </div>
 
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -138,114 +155,91 @@ export default function Reparacion() {
         </h1>
 
         <div className="grid md:grid-cols-[2fr_1fr] gap-6">
+          <section className="space-y-4">
+            {modulo.contenido.map((bloque, idx) => {
+              switch (bloque.tipo) {
+                case "texto":
+                case "pregunta":
+                  return (
+                    <div key={idx}>
+                      <p className="text-gray-700 dark:text-gray-300 italic">
+                        {bloque.texto} <TTS text={bloque.texto} />
+                      </p>
+                    </div>
+                  );
 
-<section className="space-y-4">
-  {modulo.contenido.map((bloque, idx) => {
-    switch (bloque.tipo) {
-      case "texto":
-      case "pregunta":
-        return (
-          <div key={idx}>
-            <p className="text-gray-700 dark:text-gray-300 italic">
-              {bloque.texto}  <TTS text={bloque.texto} />
-            </p>
-           
-          </div>
-        );
+                case "ventajas":
+                case "pasos":
+                  const textoBloque = `${bloque.titulo}. ${bloque.items.join(
+                    ". "
+                  )}`;
+                  return (
+                    <div
+                      key={idx}
+                      className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md p-3 shadow-sm"
+                    >
+                      <h3 className="text-sm font-semibold text-blue-700 dark:text-blue-400 mb-1">
+                        {bloque.titulo}
+                      </h3>
+                      <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-0.5">
+                        {bloque.items.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                      <TTS
+                        className="absolute right-2 top-2"
+                        text={textoBloque}
+                      />
+                    </div>
+                  );
 
-      case "ventajas":
-      case "pasos":
-        const textoBloque = `${bloque.titulo}. ${bloque.items.join(". ")}`;
-        return (
-          <div
-            key={idx}
-            className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md p-3 shadow-sm"
-          >
-            <h3 className="text-sm font-semibold text-blue-700 dark:text-blue-400 mb-1">
-              {bloque.titulo}
-            </h3>
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-0.5">
-              {bloque.items.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-            <TTS className="absolute right-2 top-2" text={textoBloque} />
-          </div>
-        );
+                case "alerta":
+                case "frecuencia":
+                case "curiosidad":
+                case "tip":
+                case "logro":
+                  return (
+                    <div
+                      key={idx}
+                      className={`p-3 rounded-md border-l-4 text-sm ${
+                        bloque.tipo === "alerta"
+                          ? "bg-yellow-100 dark:bg-yellow-200 text-yellow-900 border-yellow-500"
+                          : bloque.tipo === "frecuencia"
+                          ? "bg-blue-50 dark:bg-blue-900 text-blue-800 dark:text-blue-200 border-blue-500 italic"
+                          : bloque.tipo === "curiosidad"
+                          ? "bg-indigo-50 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 border-indigo-300"
+                          : bloque.tipo === "tip"
+                          ? "bg-green-100 dark:bg-green-800 text-green-900 dark:text-green-100 border-green-500"
+                          : "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-gray-500"
+                      }`}
+                    >
+                      {bloque.texto}
+                      <TTS text={bloque.texto} />
+                    </div>
+                  );
 
-      case "alerta":
-      case "frecuencia":
-      case "curiosidad":
-      case "tip":
-      case "logro":
-        return (
-          <div
-            key={idx}
-            className={`p-3 rounded-md border-l-4 text-sm ${
-              bloque.tipo === "alerta"
-                ? "bg-yellow-100 dark:bg-yellow-200 text-yellow-900 border-yellow-500"
-                : bloque.tipo === "frecuencia"
-                ? "bg-blue-50 dark:bg-blue-900 text-blue-800 dark:text-blue-200 border-blue-500 italic"
-                : bloque.tipo === "curiosidad"
-                ? "bg-indigo-50 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 border-indigo-300"
-                : bloque.tipo === "tip"
-                ? "bg-green-100 dark:bg-green-800 text-green-900 dark:text-green-100 border-green-500"
-                : "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-gray-500"
-            }`}
-          >
-            {bloque.texto}
-            <TTS text={bloque.texto} />
-          </div>
-        );
+                default:
+                  return null;
+              }
+            })}
 
-      default:
-        return null;
-    }
-  })}
-
-  <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-md">
-    <h2 className="text-sm font-semibold mb-1 text-gray-800 dark:text-gray-100">
-      📘 Actividad
-    </h2>
-    <Link
-      to={`/modulo/evaluacion-reparacion`}
-      className="inline-block text-blue-600 px-6 py-3 hover:underline transition"
-    >
-      Realizar actividad →
-    </Link>
-  </div>
-
-  <div
-    className="interacty_padding"
-    style={{
-      position: "relative",
-      paddingTop: "99.5%",
-      paddingRight: "0",
-      paddingBottom: "0",
-      paddingLeft: "0",
-    }}
-  >
-    <div
-      className="interacty_wrapper"
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <iframe
-        style={{ border: "none", width: "100%", height: "100%" }}
-        src="https://p.interacty.me/9a61ebea9d753546/iframe.html"
-        title="Interacty Game"
-      />
-    </div>
-  </div>
-</section>
-
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-md">
+              <h2 className="text-sm font-semibold mb-1 text-gray-800 dark:text-gray-100">
+                📘 Actividad
+              </h2>
+              <Link
+                to={`/modulo/evaluacion-reparacion`}
+                className="inline-block text-blue-600 px-6 py-3 hover:underline transition"
+              >
+                Realizar actividad →
+              </Link>
+            </div>
+            <ImageWithHotspots
+              src={pc}
+              alt="Imagen de placa base"
+              hotspots={hotspots}
+            />
+          </section>
 
           <aside className="space-y-4">
             {/* Contenedor del video + pie de imagen */}
