@@ -6,6 +6,7 @@ import brocha from "../images/brocha.png";
 import pano from "../images/paño.png";
 import alcohol from "../images/alcohol.png";
 import destornillador from "../images/destornillador.png";
+import confetti from "canvas-confetti";
 import { InformationCircleIcon } from "@heroicons/react/outline";
 
 // Lista de productos con imágenes y nombres
@@ -90,6 +91,35 @@ const MatchingGame = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [score, setScore] = useState(0);
+    const [showParticles, setShowParticles] = useState(false);
+
+  // Componente para confeti
+  const ParticleExplosion = ({ trigger }) => {
+    const fire = (particleRatio, opts) => {
+      const count = 200;
+      const defaults = {
+        origin: { y: 0.7 },
+      };
+  
+      confetti(
+        Object.assign({}, defaults, opts, {
+          particleCount: Math.floor(count * particleRatio),
+        })
+      );
+    };
+  
+    useEffect(() => {
+      if (trigger) {
+        fire(0.25, { spread: 26, startVelocity: 55 });
+        fire(0.2, { spread: 60 });
+        fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+        fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+        fire(0.1, { spread: 120, startVelocity: 45 });
+      }
+    }, [trigger]);
+  
+    return <div className="absolute inset-0 pointer-events-none z-50" />;
+  };
 
   const resetGame = () => {
     setMatched([]);
@@ -117,6 +147,8 @@ const MatchingGame = () => {
 
       if (isMatch && !isAlreadyMatched) {
         setMatched((prev) => [...prev, product.id]);
+        setShowParticles(true);
+        setTimeout(() => setShowParticles(false), 1000);
         setScore((prev) => prev + 10);
       } else {
         setScore((prev) => prev - 10);
@@ -142,6 +174,8 @@ const MatchingGame = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  
 
   return (
     <DndProvider backend={HTML5Backend}>
@@ -193,7 +227,7 @@ const MatchingGame = () => {
             ))}
           </div>
         </div>
-
+        <ParticleExplosion trigger={showParticles} />
         {matched.length === PRODUCTS.length && (
           <div className="text-center text-xl mt-6 font-bold animate-bounce">
             🎉 ¡Has emparejado todos los productos correctamente! Puntuación
