@@ -1,17 +1,23 @@
 {
   "files": {
-    "main.css": "/recurso-mantenimiento/static/css/main.dc4750f8.css",
-    "main.js": "/recurso-mantenimiento/static/js/main.d74aed72.js",
+    "main.css": "/recurso-mantenimiento/static/css/main.3109e390.css",
+    "main.js": "/recurso-mantenimiento/static/js/main.aa371f93.js",
     "static/js/453.fd53140b.chunk.js": "/recurso-mantenimiento/static/js/453.fd53140b.chunk.js",
+    "static/media/paño.png": "/recurso-mantenimiento/static/media/paño.ab17031c478f5ed45a72.png",
+    "static/media/brocha.png": "/recurso-mantenimiento/static/media/brocha.c54511cfa27f217eae33.png",
+    "static/media/aire.png": "/recurso-mantenimiento/static/media/aire.f4c00ce81ff5e969211c.png",
+    "static/media/pc.png": "/recurso-mantenimiento/static/media/pc.211aeac7b04132b28258.png",
+    "static/media/alcohol.png": "/recurso-mantenimiento/static/media/alcohol.e7a9dba4915ab4fc3e18.png",
+    "static/media/destornillador.png": "/recurso-mantenimiento/static/media/destornillador.650bd1d2c1a3ac8d284b.png",
     "static/media/click.mp3": "/recurso-mantenimiento/static/media/click.ad4c7cd01e85f43c46f2.mp3",
     "static/media/plop.mp3": "/recurso-mantenimiento/static/media/plop.06f1899fa2b66d4ba017.mp3",
     "index.html": "/recurso-mantenimiento/index.html",
-    "main.dc4750f8.css.map": "/recurso-mantenimiento/static/css/main.dc4750f8.css.map",
-    "main.d74aed72.js.map": "/recurso-mantenimiento/static/js/main.d74aed72.js.map",
+    "main.3109e390.css.map": "/recurso-mantenimiento/static/css/main.3109e390.css.map",
+    "main.aa371f93.js.map": "/recurso-mantenimiento/static/js/main.aa371f93.js.map",
     "453.fd53140b.chunk.js.map": "/recurso-mantenimiento/static/js/453.fd53140b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dc4750f8.css",
-    "static/js/main.d74aed72.js"
+    "static/css/main.3109e390.css",
+    "static/js/main.aa371f93.js"
   ]
 }
