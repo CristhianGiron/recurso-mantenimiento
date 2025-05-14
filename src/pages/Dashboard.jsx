@@ -129,7 +129,7 @@ export default function Dashboard() {
               </h2>
               <p className="text-gray-600 text-sm">{mod.descripcion}</p>
 
-              {mod.nombre !== "evaluacion" && (
+              {mod.nombre !== "referencias" && (
                 <div className="h-8 absolute z-10 -right-3 bottom-1/2">
                   <ArrowRightIcon
                     className="h-8 text-blue-600 font-bold"
